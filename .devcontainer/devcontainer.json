@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "Java",
+	"name": "Movie",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -29,7 +29,7 @@
 				"vscjava.vscode-java-test",
 				"dbaeumer.vscode-eslint",
 				"shengchen.vscode-checkstyle",
-				"dgileadi.java-decompiler",
+				"tintinweb.vscode-decompiler",
 				"alphabotsec.vscode-eclipse-keybindings",
 				"mhutchie.git-graph",
 				"vscjava.vscode-lombok",
@@ -39,8 +39,7 @@
 				"redhat.vscode-yaml",
 				"mutantdino.resourcemonitor",
 				"cweijan.vscode-postgresql-client2",
-				"redhat.vscode-quarkus",
-				"oracle-labs-graalvm.visualvm-vscode"
+				"redhat.vscode-quarkus"
 			]
 		}
 	},
@@ -52,5 +51,5 @@
 	//"postCreateCommand": "java -version",
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root"
+	"remoteUser": "vscode"
 }

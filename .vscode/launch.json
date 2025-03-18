@@ -1,11 +1,38 @@
 {
     "version": "0.2.0",
     "configurations": [
+
+
+        {
+            "type": "java",
+            "name": "AppJdbc",
+            "request": "launch",
+            "mainClass": "fr.utbm.AppJdbc",
+            "projectName": "movie"
+        },
+        {
+            "type": "java",
+            "name": "AppHibernate",
+            "request": "launch",
+            "mainClass": "fr.utbm.AppHibernate",
+            "projectName": "movie"
+        },
+        {
+            "type": "java",
+            "name": "AppEntity",
+            "request": "launch",
+            "mainClass": "fr.utbm.AppEntity",
+            "projectName": "movie"
+        },
         {
             "type": "java",
             "name": "Movie",
             "request": "launch",
-            "mainClass": "fr.utbm.Application"
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fr.utbm.Application",
+            "projectName": "movie",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

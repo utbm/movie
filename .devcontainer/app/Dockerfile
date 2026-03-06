@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/java:21-bookworm
+FROM mcr.microsoft.com/devcontainers/java:25-trixie
 
 # Installation d'outils supplémentaires (Midnight Commander, iftop)
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

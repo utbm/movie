@@ -5,12 +5,6 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:1": {
-            "version": "latest",
-            "moby": true
-        }
-    },
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.

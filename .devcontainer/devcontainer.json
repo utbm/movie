@@ -12,7 +12,9 @@
 			"mavenVersion": "3.9.9",
 			"installGradle": "false"
 		},
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+    		"moby": false
+		}
 	},
 	// Configure tool-specific properties.
 	"customizations": {

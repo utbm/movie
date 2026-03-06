@@ -4,10 +4,7 @@ services:
     build: 
       dockerfile: ./app/Dockerfile
     environment:
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_USER: postgres
-        POSTGRES_DB: postgres
-        POSTGRES_HOSTNAME: postgres
+        DOCKER_HOST: unix:///var/run/docker.sock
     volumes:
       - ../..:/workspaces:cached
       - /var/run/docker.sock:/var/run/docker.sock

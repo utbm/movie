@@ -1,11 +1,9 @@
-# Utilisation de l'image officielle Temurin basée sur Debian Bookworm
-FROM eclipse-temurin:21-jdk-bookworm
+# On utilise l'image officielle (Debian par défaut)
+FROM eclipse-temurin:21
 
-# Éviter les questions interactives lors de l'installation
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Installation des outils (Debian utilise apt-get)
-RUN apt-get update && apt-get install -y \
+# Installation de Maven et des outils système
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y \
     maven \
     git \
     curl \
@@ -14,13 +12,13 @@ RUN apt-get update && apt-get install -y \
     sudo \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# Configuration de l'utilisateur 'vscode' pour Codespaces
-# On lui donne les droits sudo et on l'ajoute au groupe docker
+# Création de l'utilisateur vscode pour la compatibilité Codespaces
 RUN groupadd vscode \
     && useradd -m -g vscode -s /bin/bash vscode \
-    && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && groupadd docker || true \
+    && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Ajout au groupe docker pour le socket (DinD / DooD)
+RUN groupadd docker || true \
     && usermod -aG docker vscode
 
-# On définit l'utilisateur par défaut pour le conteneur
 USER vscode

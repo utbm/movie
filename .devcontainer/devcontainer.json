@@ -5,11 +5,6 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"image": "mcr.microsoft.com/devcontainers/java:21-bookworm",
-    "features": {
-        // On retire la feature Java car elle est déjà dans l'image
-        "ghcr.io/devcontainers/features/common-utils:1": {}
-    },
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.

@@ -6,6 +6,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y \
     maven \
     git \
+    vim \
     curl \
     sudo \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*

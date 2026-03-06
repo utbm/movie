@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/java:21-bookworm
+FROM eclipse-temurin:21-jdk-jammy
 
 # Installation tools
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

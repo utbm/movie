@@ -5,13 +5,10 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/java:21-bookworm",
     "features": {
-        "ghcr.io/devcontainers/features/java:1": {
-            "version": "21",
-            "installMaven": "true",
-            "jdkDistro": "temurin"
-        }
+        // On retire la feature Java car elle est déjà dans l'image
+        "ghcr.io/devcontainers/features/common-utils:1": {}
     },
 	// Configure tool-specific properties.
 	"customizations": {

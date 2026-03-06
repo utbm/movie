@@ -1,0 +1,1 @@
+Film{id=0, title=Ducobu 1, copies=500, movieType=Comédie, mainActor=null}

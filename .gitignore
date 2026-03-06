@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .DS_Store
 *.class
+.vscode/launch.json

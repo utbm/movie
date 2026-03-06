@@ -1,9 +1,10 @@
-# On utilise l'image officielle (Debian par défaut)
-FROM eclipse-temurin:21
+FROM eclipse-temurin:21-jdk-bookworm
 
-# Installation de Maven et des outils système
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y \
+# Éviter les alertes interactives
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Installation des outils Debian (apt-get)
+RUN apt-get update && apt-get install -y \
     maven \
     git \
     curl \
@@ -12,13 +13,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     sudo \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# Création de l'utilisateur vscode pour la compatibilité Codespaces
+# Création de l'utilisateur vscode (indispensable pour Codespaces)
+# On lui donne l'ID 1000 pour correspondre à l'hôte
 RUN groupadd vscode \
     && useradd -m -g vscode -s /bin/bash vscode \
-    && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
-# Ajout au groupe docker pour le socket (DinD / DooD)
-RUN groupadd docker || true \
+    && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+    && groupadd docker || true \
     && usermod -aG docker vscode
 
 USER vscode
